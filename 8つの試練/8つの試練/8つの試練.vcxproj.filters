@@ -66,6 +66,9 @@
     <ClInclude Include="ObjHall.h">
       <Filter>ソース ファイル\広間</Filter>
     </ClInclude>
+    <ClInclude Include="ObjHero.h">
+      <Filter>ソース ファイル\主人公</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -112,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="ObjHall.cpp">
       <Filter>ソース ファイル\広間</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHero.cpp">
+      <Filter>ソース ファイル\主人公</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

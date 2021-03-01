@@ -153,6 +153,7 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjHall.h" />
+    <ClInclude Include="ObjHero.h" />
     <ClInclude Include="SceneHall.h" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +171,7 @@
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjHall.cpp" />
+    <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="SceneHall.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
