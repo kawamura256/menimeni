@@ -1,6 +1,8 @@
 #pragma once
 //使用するヘッダー
 #include"GameL\SceneObjManager.h"
+
+#include"math.h"
 //使用するネームスペース
 using namespace GameL;
 
@@ -9,8 +11,8 @@ using namespace GameL;
 #define HERO_RIGHT (2)//右
 #define HERO_LEFT  (3)//左
 
-#define HERO_XSPEED (1)//主人公の速度X
-#define HERO_YSPEED (1)//主人公の速度Y
+#define HERO_XSPEED (5)//主人公の速度X
+#define HERO_YSPEED (5)//主人公の速度Y
 
 //オブジェクト : 主人公
 class CObjHero : public CObj
@@ -25,7 +27,12 @@ public:
 	float GetX();     //位置情報X取得用
 	float GetY();     //位置情報Y取得用
 
+	Point pos;//位置
+	Vector vec;//移動ベクトル
+	Vector acc;//加速度
+
 private:
+
 	float m_x;  //主人公機のx方向移動用変数
 	float m_y;  //主人公機のy方向移動用変数
 	float m_vx; //移動ベクトル

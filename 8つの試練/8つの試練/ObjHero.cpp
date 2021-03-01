@@ -7,6 +7,7 @@
 #include"GameL/Audio.h"
 
 #include"ObjHero.h"
+#include"math.h"
 
 
 //使用するネームスペース
@@ -21,6 +22,20 @@ CObjHero::CObjHero()
 //イニシャライズ
 void CObjHero::Init()
 {
+
+	//位置情報初期化
+	pos.x = 300;
+	pos.y = 460;
+
+	//移動ベクトル
+	vec.x = 0.0f;
+	vec.y = 0.0f;
+
+	//加速度
+	acc.x = 0;
+	acc.y = 0;
+
+
 	m_x = 0.0f;
 	m_y = 0.0f;
 
@@ -46,40 +61,40 @@ void CObjHero::Init()
 	m_ani_frame4 = 0; //静止フレームを初期にする
 
 	//当たり判定用HitBoxを作成
-	Hits::SetHitBox(this, m_x, m_y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
+	Hits::SetHitBox(this, pos.x, pos.y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 //アクション
 void CObjHero::Action()
 {
-	m_vx = 0.0f; //移動ベクトル
-	m_vy = 0.0f; //移動ベクトル
+
+	//移動ベクトル
+	vec.x = 0.0f;
+	vec.y = 0.0f;
 	
 	if (Input::GetVKey(VK_UP) == true)
 	{
-		m_vy -= HERO_YSPEED;
-		m_y -= m_vy;
+		vec.y -= HERO_YSPEED;
 		m_direc = HERO_BACK;
 	}
 	if (Input::GetVKey(VK_DOWN) == true)
 	{
-		m_vy += HERO_YSPEED;
-		m_y += m_vy;
+		vec.y += HERO_YSPEED;
 		m_direc = HERO_FRONT;
 	}
 	if (Input::GetVKey(VK_RIGHT) == true)
 	{
-		m_vx += HERO_XSPEED;
-		m_x += m_vx;
+		vec.x += HERO_XSPEED;
 		m_direc = HERO_RIGHT;
 	}
 	if (Input::GetVKey(VK_LEFT) == true)
 	{
-		m_vx -= HERO_XSPEED;
-		m_x -= m_vx;
+		vec.x -= HERO_XSPEED;
 		m_direc = HERO_LEFT;
 	}
 
+	//移動
+	 Move(&pos, &vec, acc);
 
 }
 
@@ -143,10 +158,10 @@ void CObjHero::Draw()
 	}
 
 	//表示位置の設定
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 0.0f + m_x;
-	dst.m_right = 32.0f + m_x;
-	dst.m_bottom = 32.0f + m_y;
+	dst.m_top = 0.0f + pos.y;
+	dst.m_left = 0.0f + pos.x;
+	dst.m_right = 32.0f +pos.x;
+	dst.m_bottom = 32.0f + pos.y;
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
 }

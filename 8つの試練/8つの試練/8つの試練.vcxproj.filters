@@ -19,6 +19,9 @@
     <Filter Include="ソース ファイル\広間">
       <UniqueIdentifier>{c6f9f5f2-8f86-4c40-a84f-8dcbfe9357f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\数学">
+      <UniqueIdentifier>{b827313b-6b8c-4d32-8a3e-f1672cd0df0f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
@@ -69,6 +72,9 @@
     <ClInclude Include="ObjHero.h">
       <Filter>ソース ファイル\主人公</Filter>
     </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>ヘッダー ファイル\数学</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -118,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソース ファイル\主人公</Filter>
+    </ClCompile>
+    <ClCompile Include="function.cpp">
+      <Filter>ヘッダー ファイル\数学</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
