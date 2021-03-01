@@ -13,7 +13,7 @@ using namespace GameL;
 void CObjHall::Init()
 {
 	//マップ情報
-	int hall_data[35][35] =
+	int hall_data[HALL_HEIGHT][HALL_WIDTH] =
 	{
 	    {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 		{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -51,7 +51,7 @@ void CObjHall::Init()
 		{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 	};
 	//マップデータコピー
-	memcpy(m_map, hall_data, sizeof(int) * (35 * 35));
+	memcpy(m_map, hall_data, sizeof(int) * (HALL_HEIGHT * HALL_WIDTH));
 }
 
 //アクション
@@ -69,21 +69,28 @@ void CObjHall::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	for (int i = 0; i < 35; i++)
+	
+	//切り取り位置の設定
+	src.m_top = 0.0f;   //y
+	src.m_left = 0.0f;  //x
+	src.m_right = 0.0f; //
+	src.m_bottom = 0.0f; //y
+
+	//表示位置の設定
+	dst.m_top  =  0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 0.0f;
+	dst.m_bottom =0.0f;
+
+	//描画
+	Draw::Draw(2, &src, &dst, c, 0.0f);
+	
+
+	for (int i = 0; i < HALL_HEIGHT; i++)
 	{
-		for (int j = 0; j < 35; j++)
+		for (int j = 0; j < HALL_WIDTH; j++)
 		{
-			if (m_map[i][j] == 0)
-			{
-				//切り取り位置の設定
-				src.m_top = 0.0f;   //y
-				src.m_left = 0.0f;  //x
-				src.m_right = 0.0f; //x
-				src.m_bottom = 0.0f; //y
-				
-				//描画
-				Draw::Draw(2, &src, &dst, c, 0.0f);
-			}
+			
 			if (m_map[i][j] == 1)
 			{
 				//切り取り位置の設定
@@ -92,10 +99,10 @@ void CObjHall::Draw()
 				src.m_right = 124.0f; //x
 				src.m_bottom = 54.0f; //y
 				//表示位置の設定
-				dst.m_top = i*0.0f;
-				dst.m_left = j*0.0f;
-				dst.m_right = dst.m_left + 32.0f;
-				dst.m_bottom = dst.m_top + 32.0f;
+				dst.m_top = i*32.0f;
+				dst.m_left = j*32.0f;
+				dst.m_right = j*32.0f+ 32.0f;
+				dst.m_bottom = i*32.0f+32.0f;
 
 				//描画
 				Draw::Draw(1, &src, &dst, c, 0.0f);
