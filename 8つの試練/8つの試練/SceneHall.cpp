@@ -36,6 +36,9 @@ void CSceneHall::InitScene()
 	//グラフィック読み込み
 	Draw::LoadImageW(L"広間の素材.png", 1, TEX_SIZE_512);
 
+	//グラフィック読み込み
+	Draw::LoadImageW(L"広間の素材.png", 2, TEX_SIZE_512);
+
 	////主人公オブジェクト作成
 	//CObjHero* obj = new CObjHero();
 	//Objs::InsertObj(obj, OBJ_HERO, 10);

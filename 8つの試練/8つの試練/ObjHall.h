@@ -16,5 +16,5 @@ public:
 	void Draw();//ドロー
 
 private:
-	int m_map[10][100];//マップ情報(仮)
+	int m_map[35][35];//マップ情報(仮)
 };
