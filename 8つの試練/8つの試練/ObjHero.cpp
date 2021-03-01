@@ -15,18 +15,16 @@ using namespace GameL;
 
 
 //コンストラクタ
-CObjHero::CObjHero()
+CObjHero::CObjHero(float x,float y)
 {
+	//位置情報初期化
+	pos.x = x;
+	pos.y  = y;
 }
 
 //イニシャライズ
 void CObjHero::Init()
 {
-
-	//位置情報初期化
-	pos.x = 300;
-	pos.y = 460;
-
 	//移動ベクトル
 	vec.x = 0.0f;
 	vec.y = 0.0f;
@@ -34,7 +32,6 @@ void CObjHero::Init()
 	//加速度
 	acc.x = 0;
 	acc.y = 0;
-
 
 	m_x = 0.0f;
 	m_y = 0.0f;

@@ -40,7 +40,7 @@ void CSceneHall::InitScene()
 	Draw::LoadImageW(L"広間の素材.png", 2, TEX_SIZE_512);
 
 	////主人公オブジェクト作成
-	CObjHero* obj = new CObjHero();
+	CObjHero* obj = new CObjHero(32,32);
 	Objs::InsertObj(obj, OBJ_HERO, 2);
 
 	//blockオブジェクト作成
