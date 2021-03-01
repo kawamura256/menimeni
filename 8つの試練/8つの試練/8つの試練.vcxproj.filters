@@ -63,6 +63,9 @@
     <ClInclude Include="SceneHall.h">
       <Filter>ソース ファイル\広間</Filter>
     </ClInclude>
+    <ClInclude Include="ObjHall.h">
+      <Filter>ソース ファイル\広間</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -105,6 +108,9 @@
       <Filter>リソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SceneHall.cpp">
+      <Filter>ソース ファイル\広間</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHall.cpp">
       <Filter>ソース ファイル\広間</Filter>
     </ClCompile>
   </ItemGroup>
