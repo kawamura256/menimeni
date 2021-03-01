@@ -9,12 +9,14 @@ using namespace GameL;
 #define HERO_RIGHT (2)//右
 #define HERO_LEFT  (3)//左
 
+#define HERO_XSPEED (1)//主人公の速度X
+#define HERO_YSPEED (1)//主人公の速度Y
 
 //オブジェクト : 主人公
 class CObjHero : public CObj
 {
 public:
-	CObjHero(float x, float y);
+	CObjHero();
 	~CObjHero() {};
 	void Init();        //イニシャライズ
 	void Action();      //アクション

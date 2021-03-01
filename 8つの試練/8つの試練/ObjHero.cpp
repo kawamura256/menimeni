@@ -14,16 +14,16 @@ using namespace GameL;
 
 
 //コンストラクタ
-CObjHero::CObjHero(float x, float y)
+CObjHero::CObjHero()
 {
-	m_x = x;
-	m_y = y;
-
 }
 
 //イニシャライズ
 void CObjHero::Init()
 {
+	m_x = 0.0f;
+	m_y = 0.0f;
+
 	m_vx = 0.0f; //移動ベクトル
 	m_vy = 0.0f; //移動ベクトル
 
@@ -52,7 +52,33 @@ void CObjHero::Init()
 //アクション
 void CObjHero::Action()
 {
-
+	m_vx = 0.0f; //移動ベクトル
+	m_vy = 0.0f; //移動ベクトル
+	
+	if (Input::GetVKey(VK_UP) == true)
+	{
+		m_vy -= HERO_YSPEED;
+		m_y -= m_vy;
+		m_direc = HERO_BACK;
+	}
+	if (Input::GetVKey(VK_DOWN) == true)
+	{
+		m_vy += HERO_YSPEED;
+		m_y += m_vy;
+		m_direc = HERO_FRONT;
+	}
+	if (Input::GetVKey(VK_RIGHT) == true)
+	{
+		m_vx += HERO_XSPEED;
+		m_x += m_vx;
+		m_direc = HERO_RIGHT;
+	}
+	if (Input::GetVKey(VK_LEFT) == true)
+	{
+		m_vx -= HERO_XSPEED;
+		m_x -= m_vx;
+		m_direc = HERO_LEFT;
+	}
 
 
 }
@@ -84,42 +110,36 @@ void CObjHero::Draw()
 	};
 
 	//主人公
-	if (m_direc == HERO_RIGHT) //右
+	switch (m_direc)
 	{
-
+	case HERO_RIGHT:
 		//切り取り位置の設定
 		src.m_top = 64.0f;   //y
 		src.m_left = 0.0f + AniData3[m_ani_frame3] * 32.0f; //x
 		src.m_right = 32.0f + AniData3[m_ani_frame3] * 32.0f; //x
 		src.m_bottom = 96.0f; //y
-
-
-	}
-	if (m_direc ==HERO_BACK) //後ろ
-	{
+		break;
+	case HERO_BACK:
 		//切り取り位置の設定
 		src.m_top = 32.0f;   //y
 		src.m_left = 0.0f + AniData2[m_ani_frame2] * 32.0f; //x
 		src.m_right = 32.0f + AniData2[m_ani_frame2] * 32.0f; //x
 		src.m_bottom = 64.0f; //y
-	}
-
-	if (m_direc == HERO_FRONT) //前
-	{
+		break;
+	case HERO_FRONT:
 		//切り取り位置の設定
 		src.m_top = 0.0f;   //y
 		src.m_left = 0.0f + AniData1[m_ani_frame1] * 32.0f; //x
 		src.m_right = 32.0f + AniData1[m_ani_frame1] * 32.0f; //x
 		src.m_bottom = 32.0f; //y
-	}
-
-	if (m_direc == HERO_LEFT)//左
-	{
+		break;
+	case HERO_LEFT:
 		//切り取り位置の設定
 		src.m_top = 96.0f;   //y
 		src.m_left = 0.0f + AniData4[m_ani_frame4] * 32.0f; //x
 		src.m_right = 32.0f + AniData4[m_ani_frame4] * 32.0f; //x
 		src.m_bottom = 128.0f; //y
+		break;
 	}
 
 	//表示位置の設定
@@ -129,5 +149,4 @@ void CObjHero::Draw()
 	dst.m_bottom = 32.0f + m_y;
 
 	Draw::Draw(0, &src, &dst, c, 0.0f);
-
 }
