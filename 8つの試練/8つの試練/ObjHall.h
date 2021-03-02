@@ -8,6 +8,7 @@ using namespace GameL;
 #define HALL_WIDTH (35)
 #define HALL_HEIGHT (35)
 
+#define HALL_WALL (1)
 
 //オブジェクト：ブロック＆背景
 class CObjHall :public CObj

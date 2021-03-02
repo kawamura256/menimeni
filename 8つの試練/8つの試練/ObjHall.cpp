@@ -91,7 +91,7 @@ void CObjHall::Draw()
 		for (int j = 0; j < HALL_WIDTH; j++)
 		{
 			
-			if (m_map[i][j] == 1)
+			if (m_map[i][j] == HALL_WALL)
 			{
 				//Ø‚èŽæ‚èˆÊ’u‚ÌÝ’è
 				src.m_top = 2.0f;   //y
