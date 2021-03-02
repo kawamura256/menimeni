@@ -22,7 +22,7 @@
     <Filter Include="ソース ファイル\エターナルパワーストーン">
       <UniqueIdentifier>{b7d4c754-f6fe-4a67-9267-585f16fc1449}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\広間\主人公">
+    <Filter Include="ソース ファイル\主人公">
       <UniqueIdentifier>{39ab01b8-0dee-4738-8d93-cebc7fd50a35}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -73,7 +73,7 @@
       <Filter>ソース ファイル\広間</Filter>
     </ClInclude>
     <ClInclude Include="ObjHero.h">
-      <Filter>ソース ファイル\広間\主人公</Filter>
+      <Filter>ソース ファイル\主人公</Filter>
     </ClInclude>
     <ClInclude Include="math.h">
       <Filter>ヘッダー ファイル\数学</Filter>
@@ -129,7 +129,7 @@
       <Filter>ソース ファイル\広間</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
-      <Filter>ソース ファイル\広間\主人公</Filter>
+      <Filter>ソース ファイル\主人公</Filter>
     </ClCompile>
     <ClCompile Include="function.cpp">
       <Filter>ヘッダー ファイル\数学</Filter>
