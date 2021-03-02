@@ -99,10 +99,10 @@ void CObjHall::Draw()
 				src.m_right = 124.0f; //x
 				src.m_bottom = 54.0f; //y
 				//ï\é¶à íuÇÃê›íË
-				dst.m_top = i*16.0f;
-				dst.m_left = j*16.0f;
-				dst.m_right = j*16.0f+ 16.0f;
-				dst.m_bottom = i*16.0f+16.0f;
+				dst.m_top = i*24.0f;
+				dst.m_left = j*24.0f;
+				dst.m_right = j*24.0f+ 24.0f;
+				dst.m_bottom = i*24.0f+24.0f;
 
 				//ï`âÊ
 				Draw::Draw(1, &src, &dst, c, 0.0f);
