@@ -57,6 +57,12 @@ void CObjHero::Init()
 	m_ani_time4 = 0; //アニメーションフレーム動作間隔
 	m_ani_frame4 = 0; //静止フレームを初期にする
 
+	//blockとの衝突状態確認用
+	m_hit_up = false;
+	m_hit_down = false;
+	m_hit_left = false;
+	m_hit_right = false;
+
 	//当たり判定用HitBoxを作成
 	Hits::SetHitBox(this, pos.x, pos.y, 32, 32, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
