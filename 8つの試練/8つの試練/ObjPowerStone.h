@@ -4,10 +4,17 @@
 //使用するネームスペース
 using namespace GameL;
 
+//エターナルパワーストーンの列挙
 enum PowerStone
 {
-	RED_STONE,//赤のパワーストーン
-
+	RED_STONE,   //赤のパワーストーン
+	ORANGE_STONE,//橙のパワーストーン
+	YELLOW_STONE,//黄のパワーストーン
+	PINK_STONE,//桃のパワーストーン
+	WATER_STONE,//水のパワーストーン
+	BLUE_STONE,//青のパワーストーン
+	PURPLE_STONE,//紫のパワーストーン
+	GREEN_STONE,//緑のパワーストーン
 };
 
 //オブジェクト : エターナルパワーストーン

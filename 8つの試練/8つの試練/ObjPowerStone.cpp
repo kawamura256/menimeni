@@ -31,6 +31,12 @@ void CObjPowerStone::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjPowerStone::Action()
 {
+	if (m_id == RED_STONE)
+	{
+
+	}
+
+
 }
 
 
