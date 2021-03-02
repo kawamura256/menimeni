@@ -155,6 +155,7 @@
     <ClInclude Include="math.h" />
     <ClInclude Include="ObjHall.h" />
     <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="ObjPowerStone.h" />
     <ClInclude Include="SceneHall.h" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +175,7 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjHall.cpp" />
     <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="ObjPowerStone.cpp" />
     <ClCompile Include="SceneHall.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

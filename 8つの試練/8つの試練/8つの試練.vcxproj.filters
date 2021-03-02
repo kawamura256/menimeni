@@ -13,14 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\主人公">
-      <UniqueIdentifier>{39ab01b8-0dee-4738-8d93-cebc7fd50a35}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\広間">
       <UniqueIdentifier>{c6f9f5f2-8f86-4c40-a84f-8dcbfe9357f9}</UniqueIdentifier>
     </Filter>
     <Filter Include="ヘッダー ファイル\数学">
       <UniqueIdentifier>{b827313b-6b8c-4d32-8a3e-f1672cd0df0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\エターナルパワーストーン">
+      <UniqueIdentifier>{b7d4c754-f6fe-4a67-9267-585f16fc1449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\広間\主人公">
+      <UniqueIdentifier>{39ab01b8-0dee-4738-8d93-cebc7fd50a35}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,10 +73,13 @@
       <Filter>ソース ファイル\広間</Filter>
     </ClInclude>
     <ClInclude Include="ObjHero.h">
-      <Filter>ソース ファイル\主人公</Filter>
+      <Filter>ソース ファイル\広間\主人公</Filter>
     </ClInclude>
     <ClInclude Include="math.h">
       <Filter>ヘッダー ファイル\数学</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPowerStone.h">
+      <Filter>ソース ファイル\エターナルパワーストーン</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -123,10 +129,13 @@
       <Filter>ソース ファイル\広間</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
-      <Filter>ソース ファイル\主人公</Filter>
+      <Filter>ソース ファイル\広間\主人公</Filter>
     </ClCompile>
     <ClCompile Include="function.cpp">
       <Filter>ヘッダー ファイル\数学</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjPowerStone.cpp">
+      <Filter>ソース ファイル\エターナルパワーストーン</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
