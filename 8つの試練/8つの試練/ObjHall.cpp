@@ -63,6 +63,8 @@ void CObjHall::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
+	hero->SetBT(0)
+
 	//主人公の衝突状態確認用フラグの初期化
 	hero->SetUp(false);
 	hero->SetDown(false);
@@ -70,24 +72,24 @@ void CObjHall::Action()
 	hero->SetRight(false);
 
 	//m_mapの全要素にアクセス
-	for (int i = 0; i < 35; i++)
+	for (int i = 0; i < HALL_HEIGHT; i++)
 	{
-		for (int j = 0; j < 35; j++)
+		for (int j = 0; j < HALL_WIDTH; j++)
 		{
 			if (m_map[i][j] > 0)
 			{
 				//要素番号を座標に変更
-				float x = j * 64.0f;
-				float y = i * 64.0f;
+				float x = j * 24.0f;
+				float y = i * 24.0f;
 
 				//主人公とブロックの当たり判定
-				if ((hx + 64.0f > x) && (hx < x + 64.0f) && (hy + 64.0f > y) && (hy < y + 64.0f))
+				if ((hx + (-mx_scroll)+64.0f > x) && (hx +(-mx_scroll)< x + 64.0f) && (hy + (-my_scroll)+64.0f > y) && (hy + (-my_scroll) < y + 24.0f))
 				{
 					//上下左右判定
 
 					//vectorの作成
-					float vx = hx - x;
-					float vy = hy - y;
+					float vx = (hx+(-mx_scroll)) - x;
+					float vy = (hy + (-my_scroll))-y;
 
 					//長さを求める
 					float len = sqrt(vx * vx + vy * vy);
@@ -102,35 +104,43 @@ void CObjHall::Action()
 						r = 360.0f - abs(r);
 
 					//lenがある一定の長さのより短い場合判定に入る
-					if (len < 88.0f)
+					if (len < 44.4f)
 					{
 						//角度で上下左右を判定
 						if ((r < 45 && r>0) || r > 315)
 						{
 							//右
 							hero->SetRight(true);//主人公から見て、左の部分が衝突している
-							hero->SetX(x + 24.0f);//ブロックの位置-主人公の幅
+							hero->SetX2(x + 40.0f+(mx_scroll));//ブロックの位置-主人公の幅
+							if (m_map[i][j] == 0)
+							hero->SetBT(m_map[i][j]);
 							hero->SetVX(0.0f); //-VX*反発係数
 						}
 						if (r > 45 && r < 135)
 						{
 							//上
 							hero->SetDown(true);//主人公から見て、下の部分が衝突している
-							hero->SetY(y - 24.0f);//ブロックの位置-主人公の幅
+							hero->SetY2(y - 40.0f+(my_scroll));//ブロックの位置-主人公の幅
+							if(m_map[i][j]==0)
+							hero->SetBT(m_map[i][j]);
 							hero->SetVY(0.0f);
 						}
 						if (r > 135 && r < 225)
 						{
 							//左
 							hero->SetLeft(true);//主人公から見て、右の部分が衝突している
-							hero->SetX(x - 24.0f);//ブロックの位置-主人公の幅
-							hero->SetVX(0.0f);//-VX*反発係数
+							hero->SetX2(x - 40.0f + (mx_scroll));//ブロックの位置-主人公の幅
+							if (m_map[i][j] == 0)
+							hero->SetBT(m_map[i][j]);
+							hero->SetVX(0.0f); //-VX*反発係数
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							hero->SetUp(true);//主人公から見て、上の部分が衝突している
-							hero->SetY(y + 24.0f);//ブロックの位置-主人公の幅
+							hero->SetY2(y + 40.0f + (my_scroll));//ブロックの位置-主人公の幅
+							if (m_map[i][j] == 0)
+							hero->SetBT(m_map[i][j]);
 							hero->SetVY(0.0f);
 						}
 						

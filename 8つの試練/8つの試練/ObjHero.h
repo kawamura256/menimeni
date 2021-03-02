@@ -24,9 +24,6 @@ public:
 	void Action();      //アクション
 	void Draw();        //ドロー
 
-	float GetX();     //位置情報X取得用
-	float GetY();     //位置情報Y取得用
-
 	Point pos;//位置
 	Vector vec;//移動ベクトル
 	Vector acc;//加速度
@@ -36,8 +33,10 @@ public:
 	float GetVY() { return m_vy; }
 	float GetVX() { return m_vx; }
 
-	void SetX(float x) { m_x = x; }
-	void SetY(float y) { m_y = y; }
+	void SetX(float x);
+	void SetY(float y);
+	void SetX2(float x) { m_x = x; }
+	void SetY2(float y) { m_y = y; }
 	void SetVY(float vy) { m_vy = vy; }
 	void SetVX(float vx) { m_vx = vx; }
 
@@ -45,6 +44,9 @@ public:
 	void SetDown(bool b) { m_hit_down = b; }
 	void SetLeft(bool b) { m_hit_left = b; }
 	void SetRight(bool b) { m_hit_right = b; }
+
+	int GetBT() { return m_block_type; }
+	void SetBT(int t) { m_block_type = t; }
 
 private:
 
@@ -76,4 +78,5 @@ private:
 	bool m_hit_left;
 	bool m_hit_right;
 
+	int m_block_type;
 };
