@@ -84,6 +84,9 @@
     <ClInclude Include="ObjPowerStone.h">
       <Filter>ソース ファイル\エターナルパワーストーン</Filter>
     </ClInclude>
+    <ClInclude Include="ObjSword.h">
+      <Filter>ソース ファイル\主人公\剣</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -139,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="ObjPowerStone.cpp">
       <Filter>ソース ファイル\エターナルパワーストーン</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSword.cpp">
+      <Filter>ソース ファイル\主人公\剣</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -10,6 +10,7 @@ enum OBJ_NAME
 	OBJ_HERO,//主人公
 	OBJ_HALL,//広間
 	OBJ_POWERSTONE,//エターナルパワーストーン
+	OBJ_SWORD,//剣
 };
 //------------------------------------------------
 
@@ -54,6 +55,7 @@ struct UserData
 #include"ObjHero.h"
 #include"ObjHall.h"
 #include"ObjPowerStone.h"
+#include"ObjSword.h"
 
 //------------------------------------------------
 
