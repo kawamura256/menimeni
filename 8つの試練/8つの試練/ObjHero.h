@@ -28,22 +28,25 @@ public:
 	Vector vec;//移動ベクトル
 	Vector acc;//加速度
 
-	float GetX() { return m_x; }
-	float GetY() { return m_y; }
-	float GetVY() { return m_vy; }
-	float GetVX() { return m_vx; }
+	float GetX() { return pos.x; }
+	float GetY() { return pos.y; }
+	float GetVX() { return vec.x; }
+	float GetVY() { return vec.y; }
 
-	void SetX(float x);
-	void SetY(float y);
-	void SetX2(float x) { m_x = x; }
-	void SetY2(float y) { m_y = y; }
-	void SetVY(float vy) { m_vy = vy; }
-	void SetVX(float vx) { m_vx = vx; }
+	void SetX(float x) { pos.x = x; }
+	void SetY(float y) { pos.y = y; }
+	void SetVX(float vx) { vec.x = vx; }
+	void SetVY(float vy) { vec.y = vy; }
 
 	void SetUp(bool b) { m_hit_up = b; }
 	void SetDown(bool b) { m_hit_down = b; }
 	void SetLeft(bool b) { m_hit_left = b; }
 	void SetRight(bool b) { m_hit_right = b; }
+
+	bool GetUp() { return m_hit_up; }
+	bool GetDown() { return m_hit_down; }
+	bool GetLeft() { return m_hit_left; }
+	bool GetRight() { return m_hit_right; }
 
 	int GetBT() { return m_block_type; }
 	void SetBT(int t) { m_block_type = t; }
