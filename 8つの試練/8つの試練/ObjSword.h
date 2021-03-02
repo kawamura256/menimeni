@@ -15,6 +15,11 @@ public:
 	void Action();  //アクション
 	void Draw();   //ドロー
 
+	Point pos;//位置
+	Vector vec;//移動ベクトル
+	Vector acc;//加速度
+
 private:
 
+	int angle_sword;//剣の角度
 };
