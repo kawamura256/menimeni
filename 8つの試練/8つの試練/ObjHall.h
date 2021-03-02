@@ -9,6 +9,7 @@ using namespace GameL;
 #define HALL_HEIGHT (35)
 
 #define HALL_WALL (1)
+#define HALL_WALL2 (2)
 
 #define WIDTH_32 (32)
 #define WIDTH_64 (64)
