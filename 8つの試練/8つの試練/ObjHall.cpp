@@ -63,7 +63,7 @@ void CObjHall::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
-	hero->SetBT(0)
+	hero->SetBT(0);
 
 	//主人公の衝突状態確認用フラグの初期化
 	hero->SetUp(false);
@@ -83,7 +83,7 @@ void CObjHall::Action()
 				float y = i * 24.0f;
 
 				//主人公とブロックの当たり判定
-				if ((hx + (-mx_scroll)+64.0f > x) && (hx +(-mx_scroll)< x + 64.0f) && (hy + (-my_scroll)+64.0f > y) && (hy + (-my_scroll) < y + 24.0f))
+				if ((hx + (-mx_scroll)+64.0f > x) && (hx +(-mx_scroll)< x + 64.0f) && (hy + (-my_scroll)+64.0f > y) && (hy + (-my_scroll) < y + 64.0f))
 				{
 					//上下左右判定
 
