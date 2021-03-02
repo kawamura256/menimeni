@@ -20,7 +20,16 @@ public:
 	void Action();//アクション
 	void Draw();//ドロー
 
+	void SetScroll(float s) { mx_scroll = s; }
+	float GetScroll() { return mx_scroll; }
+
+	void SetScroll2(float s) { my_scroll = s; }
+	float GetScroll2() { return my_scroll; }
+
 private:
 	
 	int m_map[HALL_HEIGHT][HALL_WIDTH];//マップ情報
+
+	float mx_scroll;
+	float my_scroll;
 };
