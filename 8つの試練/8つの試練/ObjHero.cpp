@@ -98,6 +98,8 @@ void CObjHero::Action()
 		m_direc = HERO_LEFT;
 	}
 
+
+
 	//ˆÚ“®
 	 Move(&pos, &vec, acc);
 

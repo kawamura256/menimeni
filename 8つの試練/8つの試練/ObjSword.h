@@ -5,6 +5,11 @@
 //使用するネームスペース
 using namespace GameL;
 
+#define SWORD_FLONT (0)
+#define SWORD_BACK (1)
+#define SWORD_RIGHT (2)
+#define SWORD_LEFT (3)
+
 //オブジェクト：剣
 class CObjSword : public CObj
 {

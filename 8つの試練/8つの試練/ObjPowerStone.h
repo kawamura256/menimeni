@@ -7,6 +7,7 @@ using namespace GameL;
 //エターナルパワーストーンの列挙
 enum PowerStone
 {
+	STONE_NONE,
 	RED_STONE,   //赤のパワーストーン
 	ORANGE_STONE,//橙のパワーストーン
 	YELLOW_STONE,//黄のパワーストーン

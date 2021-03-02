@@ -34,6 +34,20 @@ void CObjSword::Action()
 {
 	CObjHero* obj = (CObjHero*)Objs::GetObj(OBJ_HERO);
 
+	//主人公の向きの情報をいただいて剣の向きを
+	switch (obj->GetSwordAngle())
+	{
+	case SWORD_FLONT:
+		break;
+	case SWORD_BACK:
+		break;
+	case SWORD_RIGHT:
+		break;
+	case SWORD_LEFT:
+		break;
+	}
+
+
 	//剣のHitBox更新用ポインター取得
 	CHitBox* hit = Hits::GetHitBox(this); //HitBoxの位置を剣の位置に更新
 	hit->SetPos(pos.x, pos.y);

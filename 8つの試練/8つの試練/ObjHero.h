@@ -51,6 +51,8 @@ public:
 	int GetBT() { return m_block_type; }
 	void SetBT(int t) { m_block_type = t; }
 
+	int GetSwordAngle() { return m_direc; }//剣の角度を
+
 private:
 
 	float m_x;  //主人公機のx方向移動用変数
