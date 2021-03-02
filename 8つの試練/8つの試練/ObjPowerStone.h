@@ -15,6 +15,7 @@ enum PowerStone
 	BLUE_STONE,//青のパワーストーン
 	PURPLE_STONE,//紫のパワーストーン
 	GREEN_STONE,//緑のパワーストーン
+	POWERSTONE_MAX
 };
 
 //オブジェクト : エターナルパワーストーン
@@ -27,11 +28,11 @@ public:
 	void Action(); //アクション
 	void Draw(); //ドロー
 
-
 private:
 
 	float m_x; //Itemのx方向の位置
 	float m_y; //Itemのy方向の位置
 
 	int m_id;//アイテム識別Id
+	static int stone_hold[POWERSTONE_MAX];//パワーストーンを保持する配列
 };

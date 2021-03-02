@@ -25,6 +25,9 @@
     <Filter Include="ソース ファイル\主人公">
       <UniqueIdentifier>{39ab01b8-0dee-4738-8d93-cebc7fd50a35}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\主人公\剣">
+      <UniqueIdentifier>{3d13a83d-5f79-42e6-93f4-cc55efb48608}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h">
