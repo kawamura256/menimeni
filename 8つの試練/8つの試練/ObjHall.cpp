@@ -63,6 +63,12 @@ void CObjHall::Action()
 	float hx = hero->GetX();
 	float hy = hero->GetY();
 
+	//主人公の衝突状態確認用フラグの初期化
+	hero->SetUp(false);
+	hero->SetDown(false);
+	hero->SetLeft(false);
+	hero->SetRight(false);
+
 	//m_mapの全要素にアクセス
 	for (int i = 0; i < 35; i++)
 	{
@@ -103,35 +109,29 @@ void CObjHall::Action()
 						{
 							//右
 							hero->SetRight(true);//主人公から見て、左の部分が衝突している
-							hero->SetX(x + 64.0f + (m_scroll));//ブロックの位置-主人公の幅
-							hero->SetVX(-hero->GetVX() * 0.1f); //-VX*反発係数
+							hero->SetX(x + 24.0f);//ブロックの位置-主人公の幅
+							hero->SetVX(0.0f); //-VX*反発係数
 						}
 						if (r > 45 && r < 135)
 						{
 							//上
 							hero->SetDown(true);//主人公から見て、下の部分が衝突している
-							hero->SetY(y - 64.0f);//ブロックの位置-主人公の幅
-							//種類を渡すのスタートとゴールのみ変更する
-							if (m_map[i][j] == 6 || m_map[i][j] == 7)
-								hero->SetBT(m_map[i][j]);//ブロックの要素(type)を主人公に渡す
+							hero->SetY(y - 24.0f);//ブロックの位置-主人公の幅
 							hero->SetVY(0.0f);
 						}
 						if (r > 135 && r < 225)
 						{
 							//左
 							hero->SetLeft(true);//主人公から見て、右の部分が衝突している
-							hero->SetX(x - 64.0f + (m_scroll));//ブロックの位置-主人公の幅
-							hero->SetVX(-hero->GetVX() * 0.1f);//-VX*反発係数
+							hero->SetX(x - 24.0f);//ブロックの位置-主人公の幅
+							hero->SetVX(0.0f);//-VX*反発係数
 						}
 						if (r > 225 && r < 315)
 						{
 							//下
 							hero->SetUp(true);//主人公から見て、上の部分が衝突している
-							hero->SetY(y + 64.0f);//ブロックの位置-主人公の幅
-							if (hero->GetVY() < 0)
-							{
-								hero->SetVY(0.0f);
-							}
+							hero->SetY(y + 24.0f);//ブロックの位置-主人公の幅
+							hero->SetVY(0.0f);
 						}
 						
 					}
