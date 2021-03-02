@@ -33,7 +33,16 @@ void CObjPowerStone::Action()
 {
 	if (m_id == RED_STONE)
 	{
+		//HitBoxの内容を更新
+		CHitBox* hit = Hits::GetHitBox(this);
+		hit->SetPos(m_x, m_y);
 
+		//主人公と接触しているかどうか調べる
+		if (hit->CheckObjNameHit(OBJ_HERO) != nullptr)
+		{
+			this->SetStatus(false);
+			Hits::DeleteHitBox(this);
+		}
 	}
 
 
