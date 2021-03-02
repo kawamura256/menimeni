@@ -28,6 +28,7 @@ void CObjPowerStone::Init()
 }
 
 
+
 //ƒAƒNƒVƒ‡ƒ“
 void CObjPowerStone::Action()
 {
@@ -44,8 +45,6 @@ void CObjPowerStone::Action()
 			Hits::DeleteHitBox(this);
 		}
 	}
-
-
 }
 
 
@@ -77,6 +76,7 @@ void CObjPowerStone::Draw()
 		Draw::Draw(1, &src, &dst, c, 0.0f);
 		break;
 	case ORANGE_STONE:
+		break;
 	}
 
 }
