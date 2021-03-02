@@ -59,17 +59,24 @@ void CObjPowerStone::Draw()
 	RECT_F dst;//描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top = 24.0f;   //y
-	src.m_left = 30.0f; //x
-	src.m_right = 226.0f; //x
-	src.m_bottom = 222.0f; //y
+	src.m_top = 0.0f;   //y
+	src.m_left = 0.0f; //x
+	src.m_right = 32.0f; //x
+	src.m_bottom = 35.0f; //y
 
-	//表示位置の設定
-	dst.m_top = 0.0f + m_y;
-	dst.m_left = 0.0f + m_x ;
-	dst.m_right = 32.0f + m_x ;
-	dst.m_bottom = 32.0f + m_y;
+	switch (m_id)
+	{
+	case RED_STONE:
 
-	//描画
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+		//表示位置の設定
+		dst.m_top = 0.0f + m_y;
+		dst.m_left = 0.0f + m_x;
+		dst.m_right = 32.0f + m_x;
+		dst.m_bottom = 32.0f + m_y;
+		//描画
+		Draw::Draw(1, &src, &dst, c, 0.0f);
+		break;
+	case ORANGE_STONE:
+	}
+
 }
