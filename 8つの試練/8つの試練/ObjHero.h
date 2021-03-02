@@ -31,6 +31,9 @@ public:
 	Vector vec;//移動ベクトル
 	Vector acc;//加速度
 
+	float GetX() { return m_x; }
+	float GetY() { return m_y; }
+
 private:
 
 	float m_x;  //主人公機のx方向移動用変数
