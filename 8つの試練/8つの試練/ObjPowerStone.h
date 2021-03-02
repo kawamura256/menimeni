@@ -27,7 +27,6 @@ public:
 	void Action(); //アクション
 	void Draw(); //ドロー
 
-
 private:
 
 	float m_x; //Itemのx方向の位置
