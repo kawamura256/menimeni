@@ -71,19 +71,19 @@ void CObjHall::Draw()
 
 	
 	//切り取り位置の設定
-	src.m_top = 0.0f;   //y
-	src.m_left = 0.0f;  //x
-	src.m_right = 0.0f; //
-	src.m_bottom = 0.0f; //y
+	src.m_top = 1.0f;   //y
+	src.m_left = 1.0f;  //x
+	src.m_right = 2.0f; //
+	src.m_bottom = 2.0f; //y
 
 	//表示位置の設定
 	dst.m_top  =  0.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 0.0f;
-	dst.m_bottom =0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom =600.0f;
 
 	//描画
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 	
 
 	for (int i = 0; i < HALL_HEIGHT; i++)
@@ -99,10 +99,10 @@ void CObjHall::Draw()
 				src.m_right = 124.0f; //x
 				src.m_bottom = 54.0f; //y
 				//表示位置の設定
-				dst.m_top = i*32.0f;
-				dst.m_left = j*32.0f;
-				dst.m_right = j*32.0f+ 32.0f;
-				dst.m_bottom = i*32.0f+32.0f;
+				dst.m_top = i*16.0f;
+				dst.m_left = j*16.0f;
+				dst.m_right = j*16.0f+ 16.0f;
+				dst.m_bottom = i*16.0f+16.0f;
 
 				//描画
 				Draw::Draw(1, &src, &dst, c, 0.0f);
